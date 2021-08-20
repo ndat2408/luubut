@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  transition: .3s;
+  background: rgb(255, 100, 100);
+}
+
+.loading{
+  cursor: wait !important;
+}
+
+.contain{
+    width: 100%;
+}
+
+.main{
+    width: 80%;
+    background: #fff;
+    border-top: 10px solid red;
+    color: #000;
+    border-radius: 10px;
+    display: block;
+    margin: 24px auto;
+    box-shadow: #333 0px 0px 15px 0px;
+}
+
+.content{
+  line-height: 20px;
+  padding: 20px 30px;
+}
+
+form{
+  width: 100%;
+  margin: 10px 0;
+}
+
+input,
+textarea{
+  height: 21px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: #000;
+  padding: 5px 0;
+  font-size: 16px;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+input:focus,
+textarea:focus{
+  outline: none;
+}
+
+.inp{
+  margin: 8px 0;
+  position: relative;
+  width: 60%;
+}
+
+input{
+  border-bottom: 1px solid silver;
+  width: 100%;
+}
+
+.underline{
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+
+.underline::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: var(--underlineColor,red);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.inp input:focus ~ .underline:before,
+.txtarea textarea:focus ~ .underline:before{
+  transform: scaleX(1);
+}
+
+.txtarea{
+  width: 100%;
+  margin: 8px 0;
+  position: relative;
+}
+
+.txtarea .underline{
+  bottom: 5px;
+}
+
+textarea{
+  height: 90px;
+  resize: none;
+  width: 100%;
+  border-bottom: 1px solid silver;
+}
+
+button{
+  cursor: pointer;
+  background: red;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+}
+.changeColor{
+  float: right;
+  cursor: default;
+}
+
+#blue, 
+#green, 
+#yellow,
+#red{
+  margin: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+}
+#red{background: red;}
+#blue{background: blue;}
+#green{background: green;}
+#yellow{background: yellow;}
+
+#modal_thank,
+#modal_empty,
+#modal_errNetwork{
+  position: fixed;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4);
+  z-index: -2;
+  opacity: 0;
+  transition: .5s;
+}
+
+.modal_box{
+  box-shadow: #333 0px 0px 8px 0px;
+  border-top: 10px solid red;
+  border-radius: 10px;
+  background: #fff;
+  position: relative;
+  width: 70%;
+  margin: 8% auto;
+}
+
+.modal_content{
+  padding: 20px 30px;
+}
+
+.modal_content p:last-child{
+  line-height: 20px;
+}
+
+/* reponsive */
+@media only screen and (max-width: 739px){
+  textarea{
+    height: 40px;
+  }
+
+  .main{
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .inp{
+    width: 100%;
+  }
+
+  .modal_box{ 
+    width: 95%;
+  }
+}

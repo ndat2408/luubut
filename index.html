@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lưu bút của tớ</title>
+    <meta name="title" content="Lưu bút của tớ">
+    <meta name="description" content="contentt">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://">
+    <meta property="og:title" content="Lưu bút của tớ">
+    <meta property="og:description" content="contentt">
+    <meta property="og:image" content="./img/ogimage.png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="/img/logo.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="contain">
+        <div class="main">
+            <div class="content">
+                <div id="test"></div>
+                <p id=textContent>Hí người anh em. Cảm ơn người anh em đã bấm vào đây, điều đó chứng tỏ rằng tôi là một người cũng khá
+                    là quan trọng với người anh em nhỉ :> nếu đúng thế thật thì tôi thấy sướng lắm. Thật đấy :)). Bây
+                    giờ thì người anh em có thể bỏ chút thời gian viết 1 vài chữ vào form dưới cho tôi nhá, để sau này
+                    còn lưu lại cho con cháu nó xem :></p>
+                <form id="myForm" action="main">
+                    <label for="name">Người anh em tên gì nhở?</label>
+                    <div class="inp">
+                        <input autocomplete="off" id="peopleName" placeholder="Ghi đầy đủ nhá" type="text">
+                        <div class="underline"></div>
+                    </div>
+                    <label for="relationship">Mình là gì của nhau :)))</label>
+                    <div class="inp">
+                        <input autocomplete="off" id="relation" placeholder="Nghĩ là gì thì cứ ghi vào" type="text">
+                        <div class="underline"></div>
+                    </div>
+                    <label for="relationship"> Sau hơn hai năm học cùng nhau thì người anh em nghĩ gì về
+                        tôi</label>
+                    <div class="inp">
+                        <input autocomplete="off" id="review" placeholder="Cứ nói thật nhá, ko phải ngại đâu"
+                            type="text">
+                        <div class="underline"></div>
+                    </div>
+                    <label for="text">Người anh em hãy để lại vài chữ cho tôi đi</label>
+                    <div class="txtarea">
+                        <textarea id="mainText" placeholder="Viết vào đây đi"></textarea>
+                        <div class="underline"></div>
+                    </div>
+                </form>
+                <button id="btn">Gửi</button>
+                <div class="changeColor">
+                    <div id="red" onclick="color(this)"></div>
+                    <div id="green" onclick="color(this)"></div>
+                    <div id="blue" onclick="color(this)"></div>
+                    <div id="yellow" onclick="color(this)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="allClose" id="modal_thank">
+            <div class="modal_box">
+                <div class="modal_content">
+                    <h2>Cảm ơn cậu nhiều nhé</h2>
+                    <br>
+                    <p>Những gì cậu gửi thì mình đã nhận được rồi, cảm ơn cậu đã bỏ chút thời gian viết vài chữ cho
+                        mình, cảm ơn cậu đã trở thành một phần kí ức của mình, đã đóng góp vào trong quãng đời đáng nhớ
+                        nhất của mình, cảm ơn cậu vì tất cả <3 </p>
+                            <p>Chúc cậu thi tốt và đỗ vào ngôi trường mà cậu đã chọn nhá</p>
+                            <br>
+                            <button onclick="OKmodal(0)">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="allClose" id="modal_empty">
+            <div class="modal_box">
+                <div class="modal_content">
+                    <h2>Cậu quên chưa ghi vào ô nào đó rồi</h2>
+                    <br>
+                    <p>Trước khi bấm gửi thì cậu điền đủ thông tin vào các ô được không :( Điều đó rất quan trọng để tớ
+                        biết cậu là ai và cậu muốn nói điều gì với tớ</p>
+                    <br>
+                    <button onclick="OKmodal(1)">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="allClose" id="modal_errNetwork">
+            <div class="modal_box">
+                <div class="modal_content">
+                    <h2>Lỗi kết nối mạng</h2>
+                    <br>
+                    <p>Cậu kiểm tra lại mạng của cậu đi, rồi gửi lại lần nữa nhé. Mạng cậu đang lỗi không gửi dữ liệu về
+                        cho tớ được</p>
+                    <br>
+                    <button onclick="OKmodal(2)">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="./js/connect.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
