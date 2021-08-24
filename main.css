@@ -32,6 +32,7 @@ body{
     display: block;
     margin: 24px auto;
     box-shadow: #333 0px 0px 15px 0px;
+    transition: .3s;
 }
 
 .content{
